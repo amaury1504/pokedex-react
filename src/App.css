@@ -1,5 +1,9 @@
 .App {
   text-align: center;
+  background-position: center;
+  background-attachment: fixed;
+  background: repeat;
+  background-color: white;
 }
 
 .container {
