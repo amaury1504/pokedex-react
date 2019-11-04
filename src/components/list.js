@@ -5,7 +5,7 @@ import Loader from './loader';
 
 export default class PokemonList extends Component {
     state = {
-        url: 'https://pokeapi.co/api/v2/pokemon?limit=',
+        url: 'https://pokeapi.co/api/v2/pokemon?limit=800',
         pokemon: null
     };
 
