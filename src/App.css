@@ -2,31 +2,19 @@
   text-align: center;
 }
 
+.container {
+  display: flex;
+  justify-content: center;
+  padding-top: 4rem;
+  min-height: 100vh;
+}
+
 .App-logo {
   height: 40vmin;
 }
 
 .navbar {
   background-color: yellow !important;
-}
-
-li{
-  list-style: none;
-}
-.pastille {
-  height: 25px;
-  width: 25px;
-  border-radius: 50%;
-  display: inline-block;
-}
-
-.green{
-  background-color: green;
-
-}
-.red{
-  background-color: red;
-
 }
 
 /** LOADER */

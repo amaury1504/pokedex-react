@@ -1,17 +1,36 @@
-import React from 'react';
-import Item from './titre';
+import React, {Component} from 'react';
 import PokemonCard from './pokemoncard';
+import axios from 'axios';
+import Loader from './loader';
 
-const List =({data}) =>{
-    
-    return(
-    <ul>
-       {data.map((pokemons, index)=>(
-        <Item key={`pokemons`+ index}{...pokemons} />
-        ))}:
+export default class PokemonList extends Component {
+    state = {
+        url: 'https://pokeapi.co/api/v2/pokemon?limit=',
+        pokemon: null
+    };
 
-    </ul>
-    );
+    async componentDidMount() {
+        const res = await axios.get(this.state.url);
+        this.setState({ pokemon: res.data['results'] });
+    }
+
+    render() {
+        return (
+            <React.Fragment>
+                {this.state.pokemon ? (
+                    <div className="row">
+                        {this.state.pokemon.map(pokemon => (
+                            <PokemonCard
+                                key={pokemon.name}
+                                name={pokemon.name}
+                                url={pokemon.url}
+                            />
+                        ))}
+                    </div>
+                ) : (
+                    <Loader/>
+                )}
+            </React.Fragment>
+        );
+    }
 }
-
-export default List

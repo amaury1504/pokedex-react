@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
 
 import './App.css';
-import Pokemons from './pages/pokemons';
-import { BrowserRouter, Route, Switch, Link } from 'react-router-dom';
-import Lorem from './pages/lorem';
+import { BrowserRouter } from 'react-router-dom';
 import NavBar from "./components/navbar";
 import 'bootstrap/dist/css/bootstrap.min.css';
+import Dashboard from "./components/Dashboard";
 
 
 class App extends Component{
@@ -13,18 +12,9 @@ class App extends Component{
     return(
       <BrowserRouter>
         <NavBar/>
-        <Switch>
-          <Route path="/pokemons">
-            <Pokemons/>
-          </Route>
-          <Route path="/lorem">
-            
-            <Lorem/>
-          </Route>
-          <Route path="/">
-            <h1>Home</h1>
-          </Route>
-        </Switch>
+        <div className={"container"}>
+            <Dashboard/>
+        </div>
       </BrowserRouter>
     )
   }
